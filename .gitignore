@@ -24,3 +24,7 @@ cyber_sieve-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+.direnv
+result
+flake.lock
