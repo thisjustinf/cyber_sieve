@@ -28,7 +28,8 @@ defmodule CyberSieve.MixProject do
       {:httpoison, "~> 1.8"},
       {:floki, "~> 0.32.0"},
       {:ecto_sql, "~> 3.7"},
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, ">= 0.0.0"},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 end

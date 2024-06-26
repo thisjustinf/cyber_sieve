@@ -1,10 +1,15 @@
 defmodule CyberSieve.CLI do
+
+  @type args :: [String.t()]
+
+  @spec main([binary()]) :: nil | :ok | {:error, <<_::64, _::_*8>>} | {:ok, %{text: binary()}}
   def main(args) do
     args
     |> parse_args()
     |> process()
   end
 
+  @spec parse_args(args) :: Keyword.t()
   defp parse_args(args) do
     {opts, _, _} =
       OptionParser.parse(args,
@@ -14,6 +19,7 @@ defmodule CyberSieve.CLI do
     opts
   end
 
+  @spec process(Keyword.t()) :: :ok
   defp process(action: "scrape", url: url) do
     CyberSieve.Scraper.scrape_website(url)
   end
